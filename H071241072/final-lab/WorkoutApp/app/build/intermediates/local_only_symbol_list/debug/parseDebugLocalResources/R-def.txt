@@ -12,6 +12,13 @@ id action_toggle_theme
 id bottom_nav
 id btn_favorite
 id btn_retry
+id chip_dada
+id chip_group_category
+id chip_kaki
+id chip_kardio
+id chip_lengan
+id chip_punggung
+id chip_semua
 id favoriteFragment
 id homeFragment
 id layout_empty
@@ -21,6 +28,7 @@ id nav_host_fragment
 id progress_bar
 id rv_exercises
 id rv_favorites
+id search_view
 id toolbar
 id toolbar_detail
 id tv_detail_category

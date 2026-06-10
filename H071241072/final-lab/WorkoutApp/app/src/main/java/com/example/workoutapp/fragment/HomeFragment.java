@@ -14,9 +14,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import com.example.workoutapp.R;
 import com.example.workoutapp.activity.ExerciseDetailActivity;
@@ -40,6 +44,8 @@ public class HomeFragment extends Fragment {
     private static final int PAGE_SIZE = 20;
     private boolean isLoading = false;
 
+    private String currentCategoryFilter = "Semua";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -56,10 +62,40 @@ public class HomeFragment extends Fragment {
         progressBar = view.findViewById(R.id.progress_bar);
         layoutError = view.findViewById(R.id.layout_error);
         btnRetry = view.findViewById(R.id.btn_retry);
+        
+        SearchView searchView = view.findViewById(R.id.search_view);
+        ChipGroup chipGroup = view.findViewById(R.id.chip_group_category);
 
         adapter = new ExerciseAdapter(this::onExerciseClick);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapter.filter(query, currentCategoryFilter);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.filter(newText, currentCategoryFilter);
+                return false;
+            }
+        });
+
+        chipGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId != -1) {
+                Chip chip = view.findViewById(checkedId);
+                if (chip != null) {
+                    currentCategoryFilter = chip.getText().toString();
+                    adapter.filter(searchView.getQuery().toString(), currentCategoryFilter);
+                }
+            } else {
+                currentCategoryFilter = "Semua";
+                adapter.filter(searchView.getQuery().toString(), currentCategoryFilter);
+            }
+        });
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

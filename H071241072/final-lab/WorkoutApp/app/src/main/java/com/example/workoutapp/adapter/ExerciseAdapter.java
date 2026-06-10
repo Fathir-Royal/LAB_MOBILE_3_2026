@@ -21,27 +21,62 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHo
         void onItemClick(Exercise exercise);
     }
 
+    private List<Exercise> originalExercises = new ArrayList<>();
     private List<Exercise> exercises = new ArrayList<>();
     private OnItemClickListener listener;
+    private String currentQuery = "";
+    private String currentCategory = "";
 
     public ExerciseAdapter(OnItemClickListener listener) {
         this.listener = listener;
     }
 
     public void setExercises(List<Exercise> list) {
-        this.exercises = list != null ? list : new ArrayList<>();
-        notifyDataSetChanged();
+        this.originalExercises = list != null ? new ArrayList<>(list) : new ArrayList<>();
+        applyFilter();
     }
 
     public void addExercises(List<Exercise> list) {
         if (list == null) return;
-        int start = exercises.size();
-        exercises.addAll(list);
-        notifyItemRangeInserted(start, list.size());
+        originalExercises.addAll(list);
+        applyFilter();
     }
 
     public void clearExercises() {
+        originalExercises.clear();
         exercises.clear();
+        notifyDataSetChanged();
+    }
+
+    public void filter(String query, String category) {
+        this.currentQuery = query == null ? "" : query.trim();
+        this.currentCategory = category == null || category.equalsIgnoreCase("Semua") ? "" : category.trim();
+        applyFilter();
+    }
+
+    private void applyFilter() {
+        exercises.clear();
+        if (currentQuery.isEmpty() && currentCategory.isEmpty()) {
+            exercises.addAll(originalExercises);
+        } else {
+            for (Exercise ex : originalExercises) {
+                boolean matchesQuery = true;
+                if (!currentQuery.isEmpty()) {
+                    matchesQuery = ex.getName().toLowerCase().contains(currentQuery.toLowerCase());
+                }
+                boolean matchesCategory = true;
+                if (!currentCategory.isEmpty()) {
+                    String cat = (ex.getCategory() != null)
+                            ? TranslationHelper.translateCategory(ex.getCategory().getName())
+                            : "Umum";
+                    matchesCategory = cat.equalsIgnoreCase(currentCategory);
+                }
+                
+                if (matchesQuery && matchesCategory) {
+                    exercises.add(ex);
+                }
+            }
+        }
         notifyDataSetChanged();
     }
 

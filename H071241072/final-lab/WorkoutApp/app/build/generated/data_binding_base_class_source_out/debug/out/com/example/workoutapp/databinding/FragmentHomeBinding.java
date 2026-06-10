@@ -5,25 +5,48 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.workoutapp.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button btnRetry;
+
+  @NonNull
+  public final Chip chipDada;
+
+  @NonNull
+  public final ChipGroup chipGroupCategory;
+
+  @NonNull
+  public final Chip chipKaki;
+
+  @NonNull
+  public final Chip chipKardio;
+
+  @NonNull
+  public final Chip chipLengan;
+
+  @NonNull
+  public final Chip chipPunggung;
+
+  @NonNull
+  public final Chip chipSemua;
 
   @NonNull
   public final LinearLayout layoutError;
@@ -34,19 +57,32 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvExercises;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button btnRetry,
-      @NonNull LinearLayout layoutError, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvExercises) {
+  @NonNull
+  public final SearchView searchView;
+
+  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnRetry,
+      @NonNull Chip chipDada, @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipKaki,
+      @NonNull Chip chipKardio, @NonNull Chip chipLengan, @NonNull Chip chipPunggung,
+      @NonNull Chip chipSemua, @NonNull LinearLayout layoutError, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvExercises, @NonNull SearchView searchView) {
     this.rootView = rootView;
     this.btnRetry = btnRetry;
+    this.chipDada = chipDada;
+    this.chipGroupCategory = chipGroupCategory;
+    this.chipKaki = chipKaki;
+    this.chipKardio = chipKardio;
+    this.chipLengan = chipLengan;
+    this.chipPunggung = chipPunggung;
+    this.chipSemua = chipSemua;
     this.layoutError = layoutError;
     this.progressBar = progressBar;
     this.rvExercises = rvExercises;
+    this.searchView = searchView;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -77,6 +113,48 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chip_dada;
+      Chip chipDada = ViewBindings.findChildViewById(rootView, id);
+      if (chipDada == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_group_category;
+      ChipGroup chipGroupCategory = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroupCategory == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_kaki;
+      Chip chipKaki = ViewBindings.findChildViewById(rootView, id);
+      if (chipKaki == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_kardio;
+      Chip chipKardio = ViewBindings.findChildViewById(rootView, id);
+      if (chipKardio == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_lengan;
+      Chip chipLengan = ViewBindings.findChildViewById(rootView, id);
+      if (chipLengan == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_punggung;
+      Chip chipPunggung = ViewBindings.findChildViewById(rootView, id);
+      if (chipPunggung == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_semua;
+      Chip chipSemua = ViewBindings.findChildViewById(rootView, id);
+      if (chipSemua == null) {
+        break missingId;
+      }
+
       id = R.id.layout_error;
       LinearLayout layoutError = ViewBindings.findChildViewById(rootView, id);
       if (layoutError == null) {
@@ -95,8 +173,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((FrameLayout) rootView, btnRetry, layoutError, progressBar,
-          rvExercises);
+      id = R.id.search_view;
+      SearchView searchView = ViewBindings.findChildViewById(rootView, id);
+      if (searchView == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((LinearLayout) rootView, btnRetry, chipDada, chipGroupCategory,
+          chipKaki, chipKardio, chipLengan, chipPunggung, chipSemua, layoutError, progressBar,
+          rvExercises, searchView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
