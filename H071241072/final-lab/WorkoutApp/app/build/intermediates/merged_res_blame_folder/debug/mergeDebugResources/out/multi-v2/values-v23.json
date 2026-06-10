@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.workoutapp-mergeDebugResources-43:/values-v23/values-v23.xml",
+            "outputFile": "com.example.workoutapp-mergeDebugResources-42:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\LENOVO\\.gradle\\caches\\9.2.1\\transforms\\e610cadb024e57ce5bcb08c9922edd38\\workspace\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",

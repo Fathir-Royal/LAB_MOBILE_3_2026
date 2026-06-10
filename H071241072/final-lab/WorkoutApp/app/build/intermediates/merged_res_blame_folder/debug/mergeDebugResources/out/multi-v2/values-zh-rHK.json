@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.workoutapp-mergeDebugResources-43:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.example.workoutapp-mergeDebugResources-42:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\LENOVO\\.gradle\\caches\\9.2.1\\transforms\\ecaec30700409a17881b0349323d9cab\\workspace\\transformed\\core-1.9.0\\res\\values-zh-rHK\\values-zh-rHK.xml",

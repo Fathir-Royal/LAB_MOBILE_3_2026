@@ -51,25 +51,25 @@
 ## Screenshot
 
 ### Halaman Home
-![alt text](image.png)
+![alt text](https://github.com/Fathir-Royal/LAB_MOBILE_3_2026/blob/main/H071241072/tugas-praktikum-2/ss/image.png?raw=true)
 ```
 [Screenshot Home Feed]
 ```
 
 ### Halaman Profile
-![alt text](image-1.png)
+![alt text](https://github.com/Fathir-Royal/LAB_MOBILE_3_2026/blob/main/H071241072/tugas-praktikum-2/ss/image-1.png?raw=true)
 ```
 [Screenshot Profile]
 ```
 
 ### Tambah Post
-![alt text](image-2.png)
+![alt text](https://github.com/Fathir-Royal/LAB_MOBILE_3_2026/blob/main/H071241072/tugas-praktikum-2/ss/image-2.png?raw=true)
 ```
 [Screenshot Add Post]
 ```
 
 ### Detail Feed
-![alt text](image-3.png)
+![alt text](https://github.com/Fathir-Royal/LAB_MOBILE_3_2026/blob/main/H071241072/tugas-praktikum-2/ss/image-3.png?raw=true)
 ```
 [Screenshot Detail Feed]
 ```
@@ -235,7 +235,7 @@ Pastikan API Level emulator minimal **24**.
 
 ### 4. Build & Run
 
-Tekan tombol **▶ Run** (atau `Shift + F10`), lalu pilih target perangkat/emulator.
+Tekan tombol **Run** (atau `Shift + F10`), lalu pilih target perangkat/emulator.
 
 ---
 

@@ -1,12 +1,12 @@
-#Tue Jun 09 20:49:47 WITA 2026
-base.0=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.4=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.6=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.7=D\:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Wed Jun 10 16:31:30 WITA 2026
+base.0=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.4=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.5=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.6=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.7=D\:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex

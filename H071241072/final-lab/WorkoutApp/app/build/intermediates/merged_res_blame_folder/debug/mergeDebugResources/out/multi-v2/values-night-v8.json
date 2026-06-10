@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.workoutapp-mergeDebugResources-43:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.workoutapp-mergeDebugResources-42:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\LENOVO\\.gradle\\caches\\9.2.1\\transforms\\8b95ee18d9915621e92e49bffdc4caca\\workspace\\transformed\\material-1.11.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "D:\\sem4\\Lab\\Tugas\\WorkoutApp\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "D:\\sem4\\Lab\\LAB_MOBILE_3_2026\\H071241072\\final-lab\\WorkoutApp\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
