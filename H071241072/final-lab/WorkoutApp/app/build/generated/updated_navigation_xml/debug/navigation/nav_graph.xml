@@ -1,0 +1,14 @@
+<navigation
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/nav_graph"
+app:startDestination="@id/homeFragment" >
+<fragment
+    android:id="@+id/homeFragment"
+    android:name="com.example.workoutapp.fragment.HomeFragment"
+    android:label="Beranda" />
+<fragment
+    android:id="@+id/favoriteFragment"
+    android:name="com.example.workoutapp.fragment.FavoriteFragment"
+    android:label="Favorit" />
+</navigation>
