@@ -1,27 +1,27 @@
 [
     {
-        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\layout_fragment_favorite.xml.flat",
-        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\fragment_favorite.xml"
-    },
-    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\layout_fragment_favorite.xml.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\fragment_favorite.xml"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\drawable_bg_category_chip.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\drawable\\bg_category_chip.xml"
     },
     {
-        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\menu_menu_bottom_nav.xml.flat",
@@ -30,6 +30,14 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.example.workoutapp-debug-44:/layout_activity_main.xml.flat",
+        "source": "com.example.workoutapp-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\drawable_bg_info_badge.xml.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\drawable\\bg_info_badge.xml"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\layout_fragment_home.xml.flat",
@@ -60,16 +68,16 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\activity_exercise_detail.xml"
     },
     {
-        "merged": "com.example.workoutapp-debug-44:/layout_fragment_home.xml.flat",
-        "source": "com.example.workoutapp-main-46:/layout/fragment_home.xml"
-    },
-    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\drawable_bg_fitness_header.xml.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\drawable\\bg_fitness_header.xml"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-debug-44:\\menu_menu_main.xml.flat",

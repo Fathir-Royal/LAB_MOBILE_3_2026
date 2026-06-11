@@ -8,6 +8,8 @@ color teal_200
 color teal_700
 color white
 drawable bg_category_chip
+drawable bg_fitness_header
+drawable bg_info_badge
 id action_toggle_theme
 id bottom_nav
 id btn_favorite
@@ -38,6 +40,8 @@ id tv_empty_favorites
 id tv_exercise_category
 id tv_exercise_desc
 id tv_exercise_name
+id tv_spec_duration
+id tv_spec_focus
 layout activity_exercise_detail
 layout activity_main
 layout fragment_favorite

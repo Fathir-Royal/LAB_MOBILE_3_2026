@@ -56,12 +56,73 @@ public class ExerciseDetailActivity extends AppCompatActivity {
         btnFavorite = findViewById(R.id.btn_favorite);
 
         tvName.setText(exerciseName);
-        tvCategory.setText("Kategori: " + TranslationHelper.translateCategory(exerciseCategory));
+        String translatedCategory = TranslationHelper.translateCategory(exerciseCategory);
+        tvCategory.setText(translatedCategory);
         tvDesc.setText(TranslationHelper.stripHtml(exerciseDesc));
+
+        // Isi spec cards berdasarkan kategori latihan
+        TextView tvSpecFocus = findViewById(R.id.tv_spec_focus);
+        TextView tvSpecDuration = findViewById(R.id.tv_spec_duration);
+        applySpecCards(tvSpecFocus, tvSpecDuration, exerciseCategory);
 
         checkFavoriteStatus();
 
         btnFavorite.setOnClickListener(v -> toggleFavorite());
+    }
+
+    /**
+     * Mengisi kartu spesifikasi (Fokus & Durasi) sesuai kategori latihan.
+     * exerciseCategory adalah nama bahasa Inggris (Chest, Cardio, dst.)
+     * karena itulah yang disimpan dan dikirim lewat Intent.
+     */
+    private void applySpecCards(TextView tvFocus, TextView tvDuration, String category) {
+        if (category == null) {
+            tvFocus.setText("Umum");
+            tvDuration.setText("3 Set x 12");
+            return;
+        }
+        switch (category) {
+            case "Cardio":
+                tvFocus.setText("Jantung &\nPernapasan");
+                tvDuration.setText("20–45 Menit");
+                break;
+            case "Chest":
+                tvFocus.setText("Otot Dada");
+                tvDuration.setText("3 Set x 10");
+                break;
+            case "Back":
+                tvFocus.setText("Otot Punggung");
+                tvDuration.setText("3 Set x 10");
+                break;
+            case "Arms":
+                tvFocus.setText("Bisep & Trisep");
+                tvDuration.setText("3 Set x 12");
+                break;
+            case "Shoulders":
+                tvFocus.setText("Otot Bahu");
+                tvDuration.setText("3 Set x 12");
+                break;
+            case "Legs":
+                tvFocus.setText("Otot Kaki");
+                tvDuration.setText("3 Set x 10");
+                break;
+            case "Abs":
+                tvFocus.setText("Otot Perut");
+                tvDuration.setText("3 Set x 15");
+                break;
+            case "Calves":
+                tvFocus.setText("Otot Betis");
+                tvDuration.setText("4 Set x 15");
+                break;
+            case "Core":
+                tvFocus.setText("Inti Tubuh");
+                tvDuration.setText("3 Set x 30 dtk");
+                break;
+            default:
+                tvFocus.setText("Otot Target");
+                tvDuration.setText("3 Set x 12");
+                break;
+        }
     }
 
     private void checkFavoriteStatus() {

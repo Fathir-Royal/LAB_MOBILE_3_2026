@@ -6,6 +6,8 @@ int color teal_200 0x0
 int color teal_700 0x0
 int color white 0x0
 int drawable bg_category_chip 0x0
+int drawable bg_fitness_header 0x0
+int drawable bg_info_badge 0x0
 int id action_toggle_theme 0x0
 int id bottom_nav 0x0
 int id btn_favorite 0x0
@@ -36,6 +38,8 @@ int id tv_empty_favorites 0x0
 int id tv_exercise_category 0x0
 int id tv_exercise_desc 0x0
 int id tv_exercise_name 0x0
+int id tv_spec_duration 0x0
+int id tv_spec_focus 0x0
 int layout activity_exercise_detail 0x0
 int layout activity_main 0x0
 int layout fragment_favorite 0x0

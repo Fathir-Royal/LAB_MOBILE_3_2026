@@ -4,7 +4,6 @@ package com.example.workoutapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +12,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.workoutapp.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +22,7 @@ public final class ActivityExerciseDetailBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final Button btnFavorite;
+  public final MaterialButton btnFavorite;
 
   @NonNull
   public final Toolbar toolbarDetail;
@@ -36,16 +36,25 @@ public final class ActivityExerciseDetailBinding implements ViewBinding {
   @NonNull
   public final TextView tvDetailName;
 
+  @NonNull
+  public final TextView tvSpecDuration;
+
+  @NonNull
+  public final TextView tvSpecFocus;
+
   private ActivityExerciseDetailBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull Button btnFavorite, @NonNull Toolbar toolbarDetail,
+      @NonNull MaterialButton btnFavorite, @NonNull Toolbar toolbarDetail,
       @NonNull TextView tvDetailCategory, @NonNull TextView tvDetailDesc,
-      @NonNull TextView tvDetailName) {
+      @NonNull TextView tvDetailName, @NonNull TextView tvSpecDuration,
+      @NonNull TextView tvSpecFocus) {
     this.rootView = rootView;
     this.btnFavorite = btnFavorite;
     this.toolbarDetail = toolbarDetail;
     this.tvDetailCategory = tvDetailCategory;
     this.tvDetailDesc = tvDetailDesc;
     this.tvDetailName = tvDetailName;
+    this.tvSpecDuration = tvSpecDuration;
+    this.tvSpecFocus = tvSpecFocus;
   }
 
   @Override
@@ -76,7 +85,7 @@ public final class ActivityExerciseDetailBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_favorite;
-      Button btnFavorite = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnFavorite = ViewBindings.findChildViewById(rootView, id);
       if (btnFavorite == null) {
         break missingId;
       }
@@ -105,8 +114,20 @@ public final class ActivityExerciseDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_spec_duration;
+      TextView tvSpecDuration = ViewBindings.findChildViewById(rootView, id);
+      if (tvSpecDuration == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_spec_focus;
+      TextView tvSpecFocus = ViewBindings.findChildViewById(rootView, id);
+      if (tvSpecFocus == null) {
+        break missingId;
+      }
+
       return new ActivityExerciseDetailBinding((CoordinatorLayout) rootView, btnFavorite,
-          toolbarDetail, tvDetailCategory, tvDetailDesc, tvDetailName);
+          toolbarDetail, tvDetailCategory, tvDetailDesc, tvDetailName, tvSpecDuration, tvSpecFocus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
