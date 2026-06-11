@@ -82,6 +82,15 @@ public class FavoriteDao {
                 e.setId(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_ID)));
                 e.setName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_NAME)));
                 e.setDescription(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_DESCRIPTION)));
+                
+                String categoryName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_CATEGORY));
+                int categoryId = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_CATEGORY_ID));
+                
+                Exercise.Category category = new Exercise.Category();
+                category.setName(categoryName);
+                category.setId(categoryId);
+                e.setCategory(category);
+                
                 list.add(e);
             }
             cursor.close();

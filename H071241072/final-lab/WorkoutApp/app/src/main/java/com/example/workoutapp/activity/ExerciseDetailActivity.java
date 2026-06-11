@@ -83,6 +83,11 @@ public class ExerciseDetailActivity extends AppCompatActivity {
             exercise.setId(exerciseId);
             exercise.setName(exerciseName);
             exercise.setDescription(exerciseDesc);
+            if (exerciseCategory != null && !exerciseCategory.isEmpty()) {
+                Exercise.Category cat = new Exercise.Category();
+                cat.setName(exerciseCategory);
+                exercise.setCategory(cat);
+            }
             favoriteDao.addFavorite(exercise, result -> mainHandler.post(() -> {
                 isFavorite = true;
                 updateFavoriteButton();

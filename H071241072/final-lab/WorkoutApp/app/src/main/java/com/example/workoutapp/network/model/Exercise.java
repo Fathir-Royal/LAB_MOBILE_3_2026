@@ -64,6 +64,7 @@ public class Exercise {
     public void setName(String name) { this.name = name; }
     public void setDescription(String description) { this.description = description; }
     public void setTranslations(List<Translation> translations) { this.translations = translations; }
+    public void setCategory(Category category) { this.category = category; }
 
     public static class Category {
         @SerializedName("id")
@@ -73,6 +74,8 @@ public class Exercise {
 
         public int getId() { return id; }
         public String getName() { return name; }
+        public void setId(int id) { this.id = id; }
+        public void setName(String name) { this.name = name; }
     }
 
     public static class Muscle {

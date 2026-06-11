@@ -78,7 +78,8 @@ public class FavoriteFragment extends Fragment {
         intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_ID, exercise.getId());
         intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_NAME, exercise.getName());
         intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_DESC, exercise.getDescription());
-        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_CATEGORY, "Favorit");
+        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_CATEGORY,
+                exercise.getCategory() != null ? exercise.getCategory().getName() : "Umum");
         startActivity(intent);
     }
 }
