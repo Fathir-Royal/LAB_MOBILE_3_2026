@@ -1,0 +1,55 @@
+﻿# Tugas Praktikum 3 - Android Development (Instagram Clone)
+**Nama:** Isnadia Nurfadillah  
+**NIM:** H071241052
+
+---
+
+## **1. Konsep Dasar & Algoritma**
+Proyek ini adalah implementasi antarmuka Instagram yang berfokus pada penggunaan **RecyclerView** untuk menampilkan konten secara dinamis. Tujuan utamanya adalah menerapkan manajemen memori yang efisien saat menangani daftar data yang banyak, serta memastikan alur navigasi data antar-Activity berjalan dengan lancar.
+
+### **Algoritma Pengelolaan Data (Dynamic List)**
+Algoritma yang digunakan di sini adalah **View-Holder Pattern** yang udah terintegrasi di `RecyclerView`.
+* **Cara Kerjanya**: Daripada membuat 100 view untuk 100 data, `RecyclerView` cuma membuat view seukuran layar (plus sedikit cadangan). Agar saat kita scroll, view yang keluar dari layar nggak dihancurkan, tapi "didaur ulang" (recycled) dan diisi dengan data baru (binding).
+* **Binding Logic**: Saya menggunakan *Interface Listener* buat menangani klik. Jadi, setiap item punya "sensor" sendiri buat tahu kapan dia diklik dan data mana yang harus dikirim ke halaman detail.
+
+### **Algoritma Pemetaan Gambar (Dynamic Resource Mapping)**
+Saya memilih tidak menggunakan cara manual `add(R.drawable.img)` berulang-ulang karena tidak efisien. Saya memakai fungsi `getIdentifier`:
+* **Algoritma**: `String Name -> Resource ID`.
+* **Proses**: Sistem looping mencari string nama file (contoh: "img_home_" + i). Fungsi ini akan bertanya ke sistem Android: "apakah ada ID untuk nama file ini?". Kalau ada, ID-nya diambil dan dimasukkan ke list. Ini jauh lebih fleksibel kalau kedepannya datanya ditambah jadi 100 atau lebih.
+
+---
+
+## **2. Keuntungan & Kekurangan Metode Ini**
+
+| Fitur | Keuntungan | Kekurangan                                                                                                |
+|-------|------------|-----------------------------------------------------------------------------------------------------------|
+| **RecyclerView** | Hemat RAM karena view didaur ulang. Aplikasi tetap smooth walau data ribuan. | Kodenya lebih kompleks dibanding `ListView` biasa karena butuh Adapter dan ViewHolder.                    |
+| **Serializable** | Bisa kirim objek utuh antar Activity. Kode jadi lebih rapi dan modular. | Secara performa sedikit lebih lambat dibanding `Parcelable`, tapi buat skala tugas ini masih sangat aman. |
+| **NestedScrollView** | Bisa menggabungkan banyak RecyclerView dalam satu halaman profil tanpa konflik scroll. | Kalau tidak teliti setting `nestedScrollingEnabled="false"`, scroll-nya bisa nge-bug atau macet.          |
+
+---
+
+## **3. Hasil Eksekusi Program**
+Aplikasi ini berhasil menjalankan alur navigasi sesuai instruksi:
+1. **Home Feed**: Menampilkan list postingan secara vertikal (10 data).
+2. **Detail**: Berhasil memindahkan data objek secara utuh (username, foto, caption) ke halaman baru.
+3. **Dynamic Upload**: Data baru yang diinput di `AddPostActivity` berhasil dipasing balik dan langsung muncul di urutan paling atas halaman profil (indeks 0).
+
+---
+
+---
+
+## **4. Dokumentasi (Screenshot)**
+*(Screenshot diambil dari smartphone pribadi)*
+
+### **Home & Detail**
+![Home Screen](screenshots/home.jpeg)
+![Detail Screen](screenshots/detail.jpeg)
+![Detail Screen Story](screenshots/story_detail.jpeg)
+
+### **Profile & Highlights**
+![Profile Screen](screenshots/profile.jpeg)
+
+### **Fitur Add Post**
+![Add Post](screenshots/add_post.jpeg)
+![Result After Post](screenshots/result.jpeg)

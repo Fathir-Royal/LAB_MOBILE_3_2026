@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#EADDDA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah Buku Baru"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_cover_preview"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_book_cover"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_pilih_gambar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilih Cover dari Galeri"
+                android:backgroundTint="#A7211D" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Judul Buku"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#A7211D"
+            app:hintTextColor="#A7211D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_judul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Penulis"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#A7211D"
+            app:hintTextColor="#A7211D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_penulis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Tahun Terbit"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#A7211D"
+            app:hintTextColor="#A7211D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_tahun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Genre"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#A7211D"
+            app:hintTextColor="#A7211D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Sinopsis (Blurb)"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#A7211D"
+            app:hintTextColor="#A7211D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_blurb"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:inputType="textMultiLine" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Simpan Buku"
+            android:backgroundTint="#A7211D" />
+
+    </LinearLayout>
+
+</ScrollView>

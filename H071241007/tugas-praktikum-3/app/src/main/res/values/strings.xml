@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Library App</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_add_book">Add Book</string>
+    <string name="nav_favorites">Favorites</string>
+
+    <string name="search_hint">Cari judul buku...</string>
+    <string name="favorites_title">Buku Favorit</string>
+
+    <string name="pick_cover">Pilih Cover dari Galeri</string>
+    <string name="save_book">Simpan Buku</string>
+
+    <string name="hint_title">Judul</string>
+    <string name="hint_author">Penulis</string>
+    <string name="hint_year">Tahun terbit</string>
+    <string name="hint_genre">Genre</string>
+    <string name="hint_rating">Rating (0-5)</string>
+    <string name="hint_review">Review singkat</string>
+    <string name="hint_blurb">Blurb / deskripsi</string>
+
+    <string name="like">♡ Like</string>
+    <string name="liked">♥ Liked</string>
+    <string name="review_prefix">Review: %1$s</string>
+
+    <string name="error_required_fields">Judul, Penulis, Tahun wajib diisi</string>
+    <string name="error_invalid_year">Tahun harus antara 1000 - 2100</string>
+    <string name="error_invalid_rating">Rating harus antara 0.0 - 5.0</string>
+    <string name="error_invalid_format">Format tahun/rating tidak valid</string>
+    <string name="book_added">Buku berhasil ditambahkan</string>
+    <string name="book_not_found">Data buku tidak ditemukan</string>
+
+    <string name="empty_favorites">Belum ada buku favorit.\nTekan Like di halaman Detail buku.</string>
+</resources>
