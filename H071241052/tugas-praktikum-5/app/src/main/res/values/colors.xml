@@ -1,0 +1,7 @@
+<resources>
+    <color name="pink_primary">#F48FB1</color>
+    <color name="pink_soft">#FCE4EC</color>
+    <color name="pink_dark">#C2185B</color>
+    <color name="app_background">#FFF8F9</color>
+    <color name="text_main">#424242</color>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <color name="md_theme_dark_primary">#002656</color>
+    <color name="md_theme_dark_onPrimary">#FFFFFF</color>
+    <color name="md_theme_dark_surface">#E5D5AB</color>
+    <color name="md_theme_dark_onSurface">#000000</color>
+    <color name="md_theme_dark_onSurfaceVariant">#000000</color>
+    <color name="md_theme_dark_outline">#9C9C9C</color>
+    <color name="md_theme_dark_background">#002656</color>
+    <color name="md_theme_dark_onBackground">#000000</color>
+
+    <color name="favorite_active">#000000</color>
+    <color name="favorite_inactive">#7A7A7A</color>
+</resources>

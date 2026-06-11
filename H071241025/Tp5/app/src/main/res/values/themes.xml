@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- light theme -->
+    <style name="Base.Theme.Tp5" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#D58718</item>
+        <item name="colorPrimaryVariant">#B86B0F</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#EADDDA</item>
+        <item name="colorOnSurface">#1C1B1F</item>
+        <item name="android:colorBackground">#EADDDA</item>
+    </style>
+
+    <style name="Theme.Tp5" parent="Base.Theme.Tp5" />
+
+    <!-- dark theme -->
+    <style name="Theme.Tp5_Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#5C3A0A</item>
+        <item name="colorPrimaryVariant">#3D2506</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#2A2A2A</item>
+        <item name="colorOnSurface">#E0E0E0</item>
+        <item name="android:colorBackground">#121212</item>
+    </style>
+
+</resources>

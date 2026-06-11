@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <ImageView
+        android:id="@+id/ivSmallCat"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_master_chef"
+        android:alpha="0.8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ivSmallCat"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catat Bahan Baru"
+                android:textColor="@color/pink_dark"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/pink_primary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apa yang ingin disimpan?"
+                        android:textColor="@color/pink_dark"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etNamaBahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Nama bahan..."
+                        android:background="@drawable/custom_input_bg"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:inputType="text"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Kategori"
+                        android:textColor="@color/pink_dark"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spKategori"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/custom_input_bg"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Letakkan di mana?"
+                        android:textColor="@color/pink_dark"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgLokasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+                        <RadioButton
+                            android:id="@+id/rbKulkas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kulkas"
+                            android:buttonTint="@color/pink_primary"
+                            android:checked="true"/>
+                        <RadioButton
+                            android:id="@+id/rbLemari"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lemari"
+                            android:buttonTint="@color/pink_primary"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+
+                    <CheckBox
+                        android:id="@+id/cbUrgent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:buttonTint="@color/pink_primary"
+                        android:text="Segera dimasak (Prioritas)"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSimpan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:text="Tambahkan ke Dapur"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/pink_primary"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
