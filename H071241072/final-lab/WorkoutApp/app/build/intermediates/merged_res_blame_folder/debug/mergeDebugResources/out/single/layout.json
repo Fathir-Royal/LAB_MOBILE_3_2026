@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.workoutapp-mergeDebugResources-43:/layout/activity_main.xml",
-        "source": "com.example.workoutapp-main-46:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-mergeDebugResources-43:\\layout\\activity_main.xml",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\activity_main.xml"
     },
@@ -12,15 +8,19 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\activity_exercise_detail.xml"
     },
     {
+        "merged": "com.example.workoutapp-mergeDebugResources-43:/layout/fragment_home.xml",
+        "source": "com.example.workoutapp-main-46:/layout/fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-mergeDebugResources-43:\\layout\\fragment_favorite.xml",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\fragment_favorite.xml"
     },
     {
-        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-mergeDebugResources-43:\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\fragment_home.xml"
-    },
-    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-mergeDebugResources-43:\\layout\\item_exercise.xml",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\item_exercise.xml"
+    },
+    {
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-mergeDebugResources-43:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\9.2.1\\com.example.workoutapp-main-46:\\layout\\fragment_home.xml"
     }
 ]

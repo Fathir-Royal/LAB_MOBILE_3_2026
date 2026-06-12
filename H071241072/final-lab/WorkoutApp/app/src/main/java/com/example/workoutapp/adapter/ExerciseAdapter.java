@@ -15,65 +15,79 @@ import com.example.workoutapp.util.TranslationHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Adapter daftar latihan untuk RecyclerView.
+ *
+ * Tanggung jawab adapter ini SUDAH disederhanakan:
+ *  - Menampilkan kartu latihan (nama, tag kategori, deskripsi singkat).
+ *  - Melakukan pencarian (search) berdasarkan NAMA latihan saja.
+ *
+ * Filter KATEGORI tidak lagi diurus di sini. Kategori difilter langsung
+ * dari server (lihat HomeFragment + WgerApiService), supaya hasilnya akurat
+ * dan tidak terbatas pada data yang kebetulan sudah ter-load di layar.
+ */
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHolder> {
 
     public interface OnItemClickListener {
         void onItemClick(Exercise exercise);
     }
 
-    private List<Exercise> originalExercises = new ArrayList<>();
-    private List<Exercise> exercises = new ArrayList<>();
-    private OnItemClickListener listener;
+    // originalExercises = semua data yang sudah di-load (sumber kebenaran).
+    // visibleExercises  = data yang benar-benar ditampilkan setelah pencarian.
+    private final List<Exercise> originalExercises = new ArrayList<>();
+    private final List<Exercise> visibleExercises = new ArrayList<>();
+
+    private final OnItemClickListener listener;
     private String currentQuery = "";
-    private String currentCategory = "";
 
     public ExerciseAdapter(OnItemClickListener listener) {
         this.listener = listener;
     }
 
+    /** Mengganti seluruh isi list (dipakai mis. oleh halaman Favorit). */
     public void setExercises(List<Exercise> list) {
-        this.originalExercises = list != null ? new ArrayList<>(list) : new ArrayList<>();
-        applyFilter();
+        originalExercises.clear();
+        if (list != null) originalExercises.addAll(list);
+        applySearch();
     }
 
+    /** Menambah data halaman berikutnya (dipakai saat infinite scroll). */
     public void addExercises(List<Exercise> list) {
         if (list == null) return;
         originalExercises.addAll(list);
-        applyFilter();
+        applySearch();
     }
 
+    /** Mengosongkan list, mis. saat ganti kategori atau tekan "Coba Lagi". */
     public void clearExercises() {
         originalExercises.clear();
-        exercises.clear();
+        visibleExercises.clear();
         notifyDataSetChanged();
     }
 
-    public void filter(String query, String category) {
-        this.currentQuery = query == null ? "" : query.trim();
-        this.currentCategory = category == null || category.equalsIgnoreCase("Semua") ? "" : category.trim();
-        applyFilter();
+    /** Jumlah item yang sudah di-load dari server (sebelum difilter pencarian). */
+    public int getLoadedCount() {
+        return originalExercises.size();
     }
 
-    private void applyFilter() {
-        exercises.clear();
-        if (currentQuery.isEmpty() && currentCategory.isEmpty()) {
-            exercises.addAll(originalExercises);
+    /** Dipanggil setiap kali teks pencarian berubah. */
+    public void filter(String query) {
+        currentQuery = (query == null) ? "" : query.trim().toLowerCase();
+        applySearch();
+    }
+
+    /**
+     * Menyusun ulang daftar yang tampil berdasarkan teks pencarian.
+     * Jika pencarian kosong -> tampilkan semua. Jika ada teks -> cocokkan dengan nama.
+     */
+    private void applySearch() {
+        visibleExercises.clear();
+        if (currentQuery.isEmpty()) {
+            visibleExercises.addAll(originalExercises);
         } else {
             for (Exercise ex : originalExercises) {
-                boolean matchesQuery = true;
-                if (!currentQuery.isEmpty()) {
-                    matchesQuery = ex.getName().toLowerCase().contains(currentQuery.toLowerCase());
-                }
-                boolean matchesCategory = true;
-                if (!currentCategory.isEmpty()) {
-                    String cat = (ex.getCategory() != null)
-                            ? TranslationHelper.translateCategory(ex.getCategory().getName())
-                            : "Umum";
-                    matchesCategory = cat.equalsIgnoreCase(currentCategory);
-                }
-                
-                if (matchesQuery && matchesCategory) {
-                    exercises.add(ex);
+                if (ex.getName().toLowerCase().contains(currentQuery)) {
+                    visibleExercises.add(ex);
                 }
             }
         }
@@ -90,14 +104,17 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Exercise ex = exercises.get(position);
+        Exercise ex = visibleExercises.get(position);
+
         holder.tvName.setText(ex.getName());
 
-        String cat = (ex.getCategory() != null)
+        // Tag kategori: nama dari API berbahasa Inggris, diterjemahkan ke Indonesia.
+        String category = (ex.getCategory() != null)
                 ? TranslationHelper.translateCategory(ex.getCategory().getName())
                 : "Umum";
-        holder.tvCategory.setText(cat);
+        holder.tvCategory.setText(category);
 
+        // Deskripsi: buang tag HTML, lalu potong agar tidak terlalu panjang.
         String desc = TranslationHelper.stripHtml(ex.getDescription());
         if (desc.length() > 100) desc = desc.substring(0, 100) + "...";
         holder.tvDesc.setText(desc.isEmpty() ? "Ketuk untuk detail latihan" : desc);
@@ -109,7 +126,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return exercises.size();
+        return visibleExercises.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

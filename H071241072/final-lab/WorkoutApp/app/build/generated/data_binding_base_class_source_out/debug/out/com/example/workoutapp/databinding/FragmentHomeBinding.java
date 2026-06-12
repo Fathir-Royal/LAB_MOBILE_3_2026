@@ -28,6 +28,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Button btnRetry;
 
   @NonNull
+  public final Chip chipBahu;
+
+  @NonNull
   public final Chip chipDada;
 
   @NonNull
@@ -41,6 +44,9 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public final Chip chipLengan;
+
+  @NonNull
+  public final Chip chipPerut;
 
   @NonNull
   public final Chip chipPunggung;
@@ -61,17 +67,20 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final SearchView searchView;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnRetry,
-      @NonNull Chip chipDada, @NonNull ChipGroup chipGroupCategory, @NonNull Chip chipKaki,
-      @NonNull Chip chipKardio, @NonNull Chip chipLengan, @NonNull Chip chipPunggung,
-      @NonNull Chip chipSemua, @NonNull LinearLayout layoutError, @NonNull ProgressBar progressBar,
+      @NonNull Chip chipBahu, @NonNull Chip chipDada, @NonNull ChipGroup chipGroupCategory,
+      @NonNull Chip chipKaki, @NonNull Chip chipKardio, @NonNull Chip chipLengan,
+      @NonNull Chip chipPerut, @NonNull Chip chipPunggung, @NonNull Chip chipSemua,
+      @NonNull LinearLayout layoutError, @NonNull ProgressBar progressBar,
       @NonNull RecyclerView rvExercises, @NonNull SearchView searchView) {
     this.rootView = rootView;
     this.btnRetry = btnRetry;
+    this.chipBahu = chipBahu;
     this.chipDada = chipDada;
     this.chipGroupCategory = chipGroupCategory;
     this.chipKaki = chipKaki;
     this.chipKardio = chipKardio;
     this.chipLengan = chipLengan;
+    this.chipPerut = chipPerut;
     this.chipPunggung = chipPunggung;
     this.chipSemua = chipSemua;
     this.layoutError = layoutError;
@@ -113,6 +122,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chip_bahu;
+      Chip chipBahu = ViewBindings.findChildViewById(rootView, id);
+      if (chipBahu == null) {
+        break missingId;
+      }
+
       id = R.id.chip_dada;
       Chip chipDada = ViewBindings.findChildViewById(rootView, id);
       if (chipDada == null) {
@@ -140,6 +155,12 @@ public final class FragmentHomeBinding implements ViewBinding {
       id = R.id.chip_lengan;
       Chip chipLengan = ViewBindings.findChildViewById(rootView, id);
       if (chipLengan == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_perut;
+      Chip chipPerut = ViewBindings.findChildViewById(rootView, id);
+      if (chipPerut == null) {
         break missingId;
       }
 
@@ -179,9 +200,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, btnRetry, chipDada, chipGroupCategory,
-          chipKaki, chipKardio, chipLengan, chipPunggung, chipSemua, layoutError, progressBar,
-          rvExercises, searchView);
+      return new FragmentHomeBinding((LinearLayout) rootView, btnRetry, chipBahu, chipDada,
+          chipGroupCategory, chipKaki, chipKardio, chipLengan, chipPerut, chipPunggung, chipSemua,
+          layoutError, progressBar, rvExercises, searchView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

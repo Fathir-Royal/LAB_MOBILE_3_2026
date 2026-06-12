@@ -12,11 +12,13 @@ int id action_toggle_theme 0x0
 int id bottom_nav 0x0
 int id btn_favorite 0x0
 int id btn_retry 0x0
+int id chip_bahu 0x0
 int id chip_dada 0x0
 int id chip_group_category 0x0
 int id chip_kaki 0x0
 int id chip_kardio 0x0
 int id chip_lengan 0x0
+int id chip_perut 0x0
 int id chip_punggung 0x0
 int id chip_semua 0x0
 int id favoriteFragment 0x0

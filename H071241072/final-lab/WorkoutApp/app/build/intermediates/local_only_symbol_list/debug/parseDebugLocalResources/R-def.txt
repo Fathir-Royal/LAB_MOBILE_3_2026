@@ -14,11 +14,13 @@ id action_toggle_theme
 id bottom_nav
 id btn_favorite
 id btn_retry
+id chip_bahu
 id chip_dada
 id chip_group_category
 id chip_kaki
 id chip_kardio
 id chip_lengan
+id chip_perut
 id chip_punggung
 id chip_semua
 id favoriteFragment
