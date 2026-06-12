@@ -1,6 +1,5 @@
 package com.example.workoutapp.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -203,12 +202,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void onExerciseClick(Exercise exercise) {
-        Intent intent = new Intent(requireContext(), ExerciseDetailActivity.class);
-        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_ID, exercise.getId());
-        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_NAME, exercise.getName());
-        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_DESC, exercise.getDescription());
-        intent.putExtra(ExerciseDetailActivity.EXTRA_EXERCISE_CATEGORY,
-                exercise.getCategory() != null ? exercise.getCategory().getName() : "Umum");
-        startActivity(intent);
+        ExerciseDetailActivity.start(requireContext(), exercise);
     }
 }

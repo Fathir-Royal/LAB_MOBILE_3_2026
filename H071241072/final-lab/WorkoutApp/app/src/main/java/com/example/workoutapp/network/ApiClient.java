@@ -9,7 +9,7 @@ public class ApiClient {
     private static final String BASE_URL = "https://wger.de/api/v2/";
     private static Retrofit retrofit = null;
 
-    public static Retrofit getClient() {
+    private static Retrofit getClient() {
         if (retrofit == null) {
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);

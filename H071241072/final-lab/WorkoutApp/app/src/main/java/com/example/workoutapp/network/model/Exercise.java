@@ -7,9 +7,6 @@ public class Exercise {
     @SerializedName("id")
     private int id;
 
-    @SerializedName("uuid")
-    private String uuid;
-
     @SerializedName("name")
     private String name;
 
@@ -19,18 +16,11 @@ public class Exercise {
     @SerializedName("category")
     private Category category;
 
-    @SerializedName("muscles")
-    private List<Muscle> muscles;
-
-    @SerializedName("equipment")
-    private List<Equipment> equipment;
-
     @SerializedName("translations")
     private List<Translation> translations;
 
     public int getId() { return id; }
-    public String getUuid() { return uuid; }
-    
+
     public String getName() {
         if (translations != null && !translations.isEmpty()) {
             for (Translation t : translations) {
@@ -56,14 +46,10 @@ public class Exercise {
     }
 
     public Category getCategory() { return category; }
-    public List<Muscle> getMuscles() { return muscles; }
-    public List<Equipment> getEquipment() { return equipment; }
-    public List<Translation> getTranslations() { return translations; }
 
     public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setDescription(String description) { this.description = description; }
-    public void setTranslations(List<Translation> translations) { this.translations = translations; }
     public void setCategory(Category category) { this.category = category; }
 
     public static class Category {
@@ -78,31 +64,7 @@ public class Exercise {
         public void setName(String name) { this.name = name; }
     }
 
-    public static class Muscle {
-        @SerializedName("id")
-        private int id;
-        @SerializedName("name")
-        private String name;
-
-        public int getId() { return id; }
-        public String getName() { return name; }
-    }
-
-    public static class Equipment {
-        @SerializedName("id")
-        private int id;
-        @SerializedName("name")
-        private String name;
-
-        public int getId() { return id; }
-        public String getName() { return name; }
-    }
-
     public static class Translation {
-        @SerializedName("id")
-        private int id;
-        @SerializedName("uuid")
-        private String uuid;
         @SerializedName("name")
         private String name;
         @SerializedName("description")
@@ -110,8 +72,6 @@ public class Exercise {
         @SerializedName("language")
         private int language;
 
-        public int getId() { return id; }
-        public String getUuid() { return uuid; }
         public String getName() { return name; }
         public String getDescription() { return description; }
         public int getLanguage() { return language; }

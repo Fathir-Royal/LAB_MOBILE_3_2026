@@ -1,5 +1,7 @@
 package com.example.workoutapp.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -22,6 +24,17 @@ public class ExerciseDetailActivity extends AppCompatActivity {
     public static final String EXTRA_EXERCISE_NAME = "exercise_name";
     public static final String EXTRA_EXERCISE_DESC = "exercise_desc";
     public static final String EXTRA_EXERCISE_CATEGORY = "exercise_category";
+
+    /** Membuka layar detail untuk sebuah latihan (dipakai Home & Favorit). */
+    public static void start(Context context, Exercise exercise) {
+        Intent intent = new Intent(context, ExerciseDetailActivity.class);
+        intent.putExtra(EXTRA_EXERCISE_ID, exercise.getId());
+        intent.putExtra(EXTRA_EXERCISE_NAME, exercise.getName());
+        intent.putExtra(EXTRA_EXERCISE_DESC, exercise.getDescription());
+        intent.putExtra(EXTRA_EXERCISE_CATEGORY,
+                exercise.getCategory() != null ? exercise.getCategory().getName() : "Umum");
+        context.startActivity(intent);
+    }
 
     private FavoriteDao favoriteDao;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
